@@ -31,8 +31,6 @@ const MyMovies = () => {
                     <div key={movie.id}>
                     <h2>{movie.title}</h2>
                     <Link to= {`/movie/${movie.id}`}><img src={movie.poster}/></Link>
-
-                    <Link ></Link>
                     <p>{movie.duration} | {movie.type} | {movie.genre} | released: {movie.release_date}</p>
                     <p>{movie.description}</p>
                     
