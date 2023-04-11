@@ -1,33 +1,36 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"
 import { useParams } from "react-router-dom"
-import MyMovies from "./ShowToWatch"
-const ShowOne = () => {
-    let [showOne, setShowOne] = useState([])
+
+
+const Showone = () => {
+    let [movie, setmovie] = useState([])
 
     const params = useParams();
     const id = params.id
     // =============== get backend data =============== //
-    const handleUpdate = () => {
-        console.log();
+    const getMovie = () => {
+        
         axios
-            .get(`http://localhost:8000/articles/${id}`, showOne)
+            .get(`http://localhost:8000/movie/${id}`, movie)
             .then((res) => {
-            setShowOne(res.data)
+            setmovie(res.data)
             console.log(res.data)
         });
     };
 
 useEffect(()=>{
-    handleUpdate()
-})
+    getMovie()
+},[])
 
     return (
         <>
-        <h1>show </h1>
-        {showOne.title}
+        <h1>{movie.title}</h1>
+        <img src= {movie.poster}/>
+        <p>{movie.duration} | {movie.type} | {movie.genre} | released: {movie.release_date}</p>
+        <p>{movie.description}</p>
         </>
     );
 }
 
-export default ShowOne;
+export default Showone;
