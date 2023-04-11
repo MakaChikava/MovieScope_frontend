@@ -1,18 +1,23 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './App.css';
-import CreateList from './components/CreateToWatch';
-import MyMovies from './components/ShowToWatch';
-import API from './components/Api';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
 const App = () => {
+  let [movies, setMovies] = useState([]);
+
+  // =================== Get movies =======================
+  const getMovies = () =>{
+    axios.
+      get('')
+      .then((res)=>{
+        setMovies(res.data)
+      })
+  }
+  useEffect(()=>{
+
+  }, [])
   return (
     <div className="App">
-    
+    <h1>Movie API</h1>
 
     </div>
   );
