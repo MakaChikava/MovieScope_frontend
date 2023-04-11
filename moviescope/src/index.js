@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import CreateList from './components/CreateToWatch';
 import MyMovies from './components/ShowToWatch';
+import ShowOne from './components/detailsPg';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/mylist",
     element: <MyMovies/>,
+  },
+  {
+    path: "/movie/:id",
+    element: <ShowOne/>,
   },
 ]);
 
