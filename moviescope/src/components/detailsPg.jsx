@@ -5,6 +5,7 @@ import { redirect, useParams } from "react-router-dom"
 
 const Showone = () => {
     let [movie, setmovie] = useState([])
+    let [update, setUpdate] = useState({title:'', description:'', poster:'', genre:'', type:'', duration:'', release_date:''})
 
     const params = useParams();
     const id = params.id
@@ -20,7 +21,19 @@ const Showone = () => {
     };
 
     // ====================== UPDATE ================ //
-
+const handleupdate = (e) =>{
+setUpdate({...update,
+[e.target.name] : e.target.value})
+console.log(e.target.value)
+}
+const handleSubmit = (e) =>{
+e.preventDefault();
+axios
+.put(`http://localhost:8000/movie/` + id, update)
+.then((res)=>{
+    getMovie()
+})
+}
     // ====================== DELETE ================ //
     const handleDelete = () =>{
         console.log(id)
@@ -44,21 +57,21 @@ useEffect(()=>{
         <p>{movie.description}</p>
         <details>
             <summary>Edit</summary>
-        <form>
+        <form onSubmit={handleSubmit}>
         <label htmlFor="name">title: </label>
-            <input type="text" name='title'/>
+            <input type="text" name='title' onChange={handleupdate}/>
             <label htmlFor="name">Description: </label>
-            <input type="text" name='Description'/>
+            <input type="text" name='Description' onChange={handleupdate}/>
             <label htmlFor="name">poster: </label>
-            <input type="text" name='poster'/>
+            <input type="text" name='poster' onChange={handleupdate}/>
             <label htmlFor="name">genre: </label>
-            <input type="text" name='genre'/>
+            <input type="text" name='genre' onChange={handleupdate}/>
             <label htmlFor="name">type: </label>
-            <input type="text" name='type'/>
+            <input type="text" name='type' onChange={handleupdate}/>
             <label htmlFor="name">duration: </label>
-            <input type="text" name='duration'/>
+            <input type="text" name='duration' onChange={handleupdate}/>
             <label htmlFor="name">release_date: </label>
-            <input type="text" name='release_date'/>
+            <input type="text" name='release_date' onChange={handleupdate}/>
             <input type="submit" />
         </form>
         </details>
