@@ -9,13 +9,19 @@ const MyMovies = () => {
         axios.
             get('http://localhost:8000/movies')
             .then((res)=>{
-                setMovies
-        (res.data)
+                setMovies(res.data)
                 console.log(res.data)
             })
     }
 // ==================== grab id from click on image
-
+const handleDelete = (e) =>{
+    console.log(e.target.value)
+    axios
+        .delete(`http://localhost:8000/movie/` + e.target.value)
+        .then((res)=>{
+            getData()
+        })
+}
 
     useEffect(()=>{
         getData()
@@ -29,14 +35,13 @@ const MyMovies = () => {
             {movies.map((movie)=>{
                 return(
                     <div key={movie.id}>
-                    <h2>{movie.title}</h2>
-                    <Link to= {`/movie/${movie.id}`}><img src={movie.poster}/></Link>
-                    <p>{movie.duration} | {movie.type} | {movie.genre} | released: {movie.release_date}</p>
-                    <p>{movie.description}</p>
-                    
+                        <h2>{movie.title}</h2>
+                        <Link to= {`/movie/${movie.id}`}><img src={movie.poster}/></Link>
+                        <button onClick={handleDelete} value={movie.id}>Remove</button>
                     </div>
-                )
-            })}
+                    
+                );
+            })};
         </div>
         </>
     );

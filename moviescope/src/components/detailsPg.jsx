@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"
-import { useParams } from "react-router-dom"
+import { redirect, useParams } from "react-router-dom"
 
 
 const Showone = () => {
@@ -8,7 +8,7 @@ const Showone = () => {
 
     const params = useParams();
     const id = params.id
-    // =============== get backend data =============== //
+    // =============== GET MOVIE DATA =============== //
     const getMovie = () => {
         
         axios
@@ -19,6 +19,19 @@ const Showone = () => {
         });
     };
 
+    // ====================== UPDATE ================ //
+
+    // ====================== DELETE ================ //
+    const handleDelete = () =>{
+        console.log(id)
+        axios
+            .delete(`http://localhost:8000/movie/${id}`)
+            .then((res)=>{
+                return redirect('http://localhost:8000/mylist')
+            })
+    }
+
+
 useEffect(()=>{
     getMovie()
 },[])
@@ -27,8 +40,9 @@ useEffect(()=>{
         <>
         <h1>{movie.title}</h1>
         <img src= {movie.poster}/>
-        <p>{movie.duration} | {movie.type} | {movie.genre} | released: {movie.release_date}</p>
+        <p>{movie.duration} | {movie.type} | {movie.genre} | {movie.release_date}</p>
         <p>{movie.description}</p>
+        <button onClick={handleDelete} value={movie.id}>Remove</button>
         </>
     );
 }
