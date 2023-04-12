@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 const App = () => {
-  let [movies, setMovies] = useState([]);
+  let [movies, setMovies] = useState({});
 
   // =================== Get movies =======================
   const getMovies = () =>{
     const KEY = process.env.REACT_APP_API_KEY;
     axios.
-      get(`https://api.themoviedb.org/3/search/multi?api_key=${KEY}&language=en-US&query=spiderman&page=1&include_adult=false`)
+      get(`https://api.themoviedb.org/3/search/multi?api_key=2e43ac85ef27e0ebce60d4b75ba277f9&language=en-US&query=interstellar&page=1&include_adult=false`, movies)
       .then((res)=>{
-        setMovies(res.data)
+        setMovies(res.data.results)
+        console.log(res.data.results)
       })
   }
   useEffect(()=>{
@@ -24,7 +25,8 @@ const App = () => {
       return(
         <>
         <h1>{movie.title}</h1>
-        <img src={movie.poster_path}/>
+        <h1>{movie.name}</h1>
+        <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`}/>
         </>
       )
     })}
