@@ -4,6 +4,7 @@ import { redirect, useParams } from "react-router-dom"
 
 
 const Showone = () => {
+
     let [movie, setmovie] = useState([])
     let [update, setUpdate] = useState({title:'', description:'', poster:'', genre:'', type:'', duration:'', release_date:''})
 
@@ -21,10 +22,11 @@ const Showone = () => {
     };
 
     // ====================== UPDATE ================ //
+
 const handleupdate = (e) =>{
 setUpdate({...update,
 [e.target.name] : e.target.value})
-console.log(e.target.value)
+// console.log(e.target.value)
 }
 const handleSubmit = (e) =>{
 e.preventDefault();
@@ -34,13 +36,14 @@ axios
     getMovie()
 })
 }
+
     // ====================== DELETE ================ //
+
     const handleDelete = () =>{
         console.log(id)
         axios
             .delete(`http://localhost:8000/movie/${id}`)
             .then((res)=>{
-                // return redirect('http://localhost:3000/mylist')
                 window.location.href = 'http://localhost:3000/mylist';
             })
     }

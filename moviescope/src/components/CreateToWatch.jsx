@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from 'axios';
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CreateList = () => {
     const data = {title:'', description:'', poster:'', genre:'', type:'', duration:'', release_date:''}
