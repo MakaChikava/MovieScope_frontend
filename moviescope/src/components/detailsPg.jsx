@@ -42,6 +42,27 @@ useEffect(()=>{
         <img src= {movie.poster}/>
         <p>{movie.duration} | {movie.type} | {movie.genre} | {movie.release_date}</p>
         <p>{movie.description}</p>
+        <details>
+            <summary>Edit</summary>
+        <form>
+        <label htmlFor="name">title: </label>
+            <input type="text" name='title'/>
+            <label htmlFor="name">Description: </label>
+            <input type="text" name='Description'/>
+            <label htmlFor="name">poster: </label>
+            <input type="text" name='poster'/>
+            <label htmlFor="name">genre: </label>
+            <input type="text" name='genre'/>
+            <label htmlFor="name">type: </label>
+            <input type="text" name='type'/>
+            <label htmlFor="name">duration: </label>
+            <input type="text" name='duration'/>
+            <label htmlFor="name">release_date: </label>
+            <input type="text" name='release_date'/>
+            <input type="submit" />
+        </form>
+        </details>
+        
         <button onClick={handleDelete} value={movie.id}>Remove</button>
         </>
     );
