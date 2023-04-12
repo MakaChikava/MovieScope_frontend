@@ -29,7 +29,7 @@ console.log(e.target.value)
 const handleSubmit = (e) =>{
 e.preventDefault();
 axios
-.put(`http://localhost:8000/movie/` + id, update)
+.put(`http://localhost:8000/movie/${id}`, update)
 .then((res)=>{
     getMovie()
 })
@@ -40,10 +40,11 @@ axios
         axios
             .delete(`http://localhost:8000/movie/${id}`)
             .then((res)=>{
-                return redirect('http://localhost:8000/mylist')
+                // return redirect('http://localhost:3000/mylist')
+                window.location.href = 'http://localhost:3000/mylist';
             })
     }
-
+// 
 
 useEffect(()=>{
     getMovie()
@@ -53,15 +54,16 @@ useEffect(()=>{
         <>
         <h1>{movie.title}</h1>
         <img src= {movie.poster}/>
-        <p>{movie.duration} | {movie.type} | {movie.genre} | {movie.release_date}</p>
+        <h5>{movie.duration} | {movie.type} | {movie.genre} | {movie.release_date}</h5>
         <p>{movie.description}</p>
+
         <details>
             <summary>Edit</summary>
         <form onSubmit={handleSubmit}>
         <label htmlFor="name">title: </label>
             <input type="text" name='title' onChange={handleupdate}/>
             <label htmlFor="name">Description: </label>
-            <input type="text" name='Description' onChange={handleupdate}/>
+            <input type="text" name='description' onChange={handleupdate}/>
             <label htmlFor="name">poster: </label>
             <input type="text" name='poster' onChange={handleupdate}/>
             <label htmlFor="name">genre: </label>

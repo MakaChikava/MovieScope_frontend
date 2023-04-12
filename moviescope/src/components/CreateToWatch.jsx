@@ -22,7 +22,7 @@ const CreateList = () => {
             .post('http://localhost:8000/movie', form)
             .then((res)=>{
                 console.log(res)
-                redirect('/mylist')
+                window.location.href = 'http://localhost:3000/mylist';
             })
     }
     
