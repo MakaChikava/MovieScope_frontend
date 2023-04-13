@@ -6,7 +6,7 @@ const App = () => {
 
   // =================== Get movies =======================
   const getMovies = () =>{
-    const KEY = process.env.REACT_APP_API_KEY;
+    // KEY = process.env.REACT_APP_API_KEY;
     axios.
       get(`https://api.themoviedb.org/3/search/multi?api_key=2e43ac85ef27e0ebce60d4b75ba277f9&language=en-US&query=interstellar&page=1&include_adult=false`, movies)
       .then((res)=>{
