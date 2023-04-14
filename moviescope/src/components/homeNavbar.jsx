@@ -5,14 +5,14 @@ const SearchNavbar = (props) => {
 
     return (
         // navbar
-        <div className="bg-[#1e40af] flex flex-row justify-between h-20 shadow-xl shadow-gray-700">
+        <div className="bg-[#1e40af] flex flex-row justify-between h-20 shadow-lg shadow-blue-600">
 
         {/* logo container */}
             <div className="flex w-44">
 
         {/* logoname */}
                 <div className="flex justify-center items-center w-28">
-                    <h1 className="flex text-white">MovieScope</h1>
+                    <h1 className="flex text-white font-bold italic font-mono text-2xl">MovieScope</h1>
                 </div>
 
         {/* logoimg */}

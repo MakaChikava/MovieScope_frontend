@@ -22,11 +22,9 @@ const App = () => {
   return (
     <div className="App">
       <SearchNavbar/>
-    <h1>Movie API</h1>
-            <div className="flex items-center">
-                <input type="text" placeholder="search keywords"/>
-                <input type="submit" className='p-3 px-6 pt-2text-white bg-blue rounded-full baseline hover:bg-brightRedLight'/>
-                <button className='p-3 px-6 pt-2 text-white bg-blue rounded-full baseline hover:bg-brightRedLight'>Search</button>
+            <div className="flex items-center justify-center ">
+                <input type="text" placeholder="search keywords" className=' h-10 w-80 rounded-lg'/>
+                <button className='bg-[#1543E4] text-white rounded-lg h-10 w-20'>Search</button>
             </div>
     {/* {movies.map((movie)=>{
       return(
