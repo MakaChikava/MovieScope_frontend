@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import SearchNavbar from './components/homeNavbar';
+
 import './App.css';
 const App = () => {
   let [movies, setMovies] = useState({});
@@ -19,9 +21,14 @@ const App = () => {
   }, [])
   return (
     <div className="App">
+      <SearchNavbar/>
     <h1>Movie API</h1>
-
-    {movies.map((movie)=>{
+            <div className="flex items-center">
+                <input type="text" placeholder="search keywords"/>
+                <input type="submit" className='p-3 px-6 pt-2text-white bg-blue rounded-full baseline hover:bg-brightRedLight'/>
+                <button className='p-3 px-6 pt-2 text-white bg-blue rounded-full baseline hover:bg-brightRedLight'>Search</button>
+            </div>
+    {/* {movies.map((movie)=>{
       return(
         <>
         <h1>{movie.title}</h1>
@@ -29,7 +36,7 @@ const App = () => {
         <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`}/>
         </>
       )
-    })}
+    })} */}
     </div>
   );
 }

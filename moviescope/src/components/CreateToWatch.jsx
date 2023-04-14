@@ -35,7 +35,7 @@ const CreateList = () => {
         <label htmlFor="name">title: </label>
             <input type="text" name='title' onChange={handleChange}/>
             <label htmlFor="name">Description: </label>
-            <input type="text" name='Description' onChange={handleChange}/>
+            <input type="text" name='description' onChange={handleChange}/>
             <label htmlFor="name">poster: </label>
             <input type="text" name='poster' onChange={handleChange}/>
             <label htmlFor="name">genre: </label>
