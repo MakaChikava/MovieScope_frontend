@@ -8,10 +8,11 @@ const App = () => {
   let [movies, setMovies] = useState([]);
 
   // =================== Get movies =======================
+  
   const getMovies = () =>{
-    // KEY = process.env.REACT_APP_API_KEY;
+    const API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
     axios.
-      get(`https://api.themoviedb.org/3/search/multi?api_key=2e43ac85ef27e0ebce60d4b75ba277f9&language=en-US&query=hangover&page=1&include_adult=false`, emptyMovie)
+      get(`https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=en-US&query=spiderman&page=1&include_adult=false`, emptyMovie)
       .then((res)=>{
         setMovies(res.data.results)
         console.log(res.data.results)
