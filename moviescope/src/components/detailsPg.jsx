@@ -63,7 +63,7 @@ useEffect(()=>{
         <details>
             <summary>Edit</summary>
         <form onSubmit={handleSubmit}>
-        <label htmlFor="name">title: </label>
+        <label htmlFor="name" >title: </label>
             <input type="text" name='title' onChange={handleupdate}/>
             <label htmlFor="name">Description: </label>
             <input type="text" name='description' onChange={handleupdate}/>

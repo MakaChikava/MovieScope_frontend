@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import Navbar from "./navbar";
 import { Link } from "react-router-dom";
 
 const CreateList = () => {
@@ -29,24 +30,25 @@ const CreateList = () => {
 
     return (
         <>
+        <Navbar/>
         <h1>Create List</h1>
 
         <form onSubmit={handleSubmit}>
-        <label htmlFor="name">title: </label>
-            <input type="text" name='title' onChange={handleChange}/>
-            <label htmlFor="name">Description: </label>
-            <input type="text" name='description' onChange={handleChange}/>
-            <label htmlFor="name">poster: </label>
-            <input type="text" name='poster' onChange={handleChange}/>
-            <label htmlFor="name">genre: </label>
-            <input type="text" name='genre' onChange={handleChange}/>
-            <label htmlFor="name">type: </label>
-            <input type="text" name='type' onChange={handleChange}/>
-            <label htmlFor="name">duration: </label>
-            <input type="text" name='duration' onChange={handleChange}/>
-            <label htmlFor="name">release_date: </label>
-            <input type="text" name='release_date' onChange={handleChange}/>
-            <input type="submit" />
+        <label htmlFor="name" className="text-white">title: </label>
+            <input type="text" name='title' onChange={handleChange} className="text-black"/>
+            <label htmlFor="name" className="text-white">Description: </label>
+            <input type="text" name='description' onChange={handleChange} className="text-black"/>
+            <label htmlFor="name" className="text-white">poster: </label>
+            <input type="text" name='poster' onChange={handleChange} className="text-black"/>
+            <label htmlFor="name" className="text-white">genre: </label>
+            <input type="text" name='genre' onChange={handleChange} className="text-black"/>
+            <label htmlFor="name" className="text-white">type: </label>
+            <input type="text" name='type' onChange={handleChange} className="text-black"/>
+            <label htmlFor="name" className="text-white">duration: </label>
+            <input type="text" name='duration' onChange={handleChange} className="text-black"/>
+            <label htmlFor="name" className="text-white">release_date: </label>
+            <input type="text" name='release_date' onChange={handleChange} className="text-black"/>
+            <input type="submit" className="text-white"/>
         </form>
         </>
     );

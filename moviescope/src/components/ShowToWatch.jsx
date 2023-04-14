@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import Navbar from "./navbar";
 const MyMovies = () => {
     let [movies, setMovies] = useState([])
 
@@ -30,14 +31,15 @@ const handleDelete = (e) =>{
 
     return (
         <>
-        <h1>My Movies</h1>
-        <div className="MyMovies">
+        <Navbar/>
+        <div className="my-20 flex flex-row flex-wrap justify-center">
             {movies.map((movie)=>{
                 return(
-                    <div key={movie.id}>
-                        <h2>{movie.title}</h2>
-                        <Link to= {`/movie/${movie.id}`}><img src={movie.poster}/></Link>
-                        <button onClick={handleDelete} value={movie.id}>Remove</button>
+                    <div className="flex flex-col m-5 justify-center" key={movie.id}>
+                        
+                        <Link to= {`/movie/${movie.id}`}><img src={movie.poster} className="hover:border hover:border-4 hover:rounded duration-200 border-white flex h-96 w-72 "/></Link>
+                        <h2 className="flex justify-center text-white">{movie.title}</h2>
+                        <button className="flex justify-center items-center bg-[#1543E4] text-white rounded-lg h-12 w-78 mx-2" onClick={handleDelete} value={movie.id}><img src='https://cdn-icons-png.flaticon.com/512/542/542724.png' className='h-8'/></button>
                     </div>
                     
                 );
