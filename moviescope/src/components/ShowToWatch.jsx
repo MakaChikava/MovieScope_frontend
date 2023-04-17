@@ -8,7 +8,7 @@ const MyMovies = () => {
     // =============== get movies data =============== //
     const getData = () =>{
         axios.
-            get('http://localhost:8000/movies')
+            get('http://moviescope-backend.onrender.com/movies')
             .then((res)=>{
                 setMovies(res.data)
                 console.log(res.data)
@@ -18,7 +18,7 @@ const MyMovies = () => {
 const handleDelete = (e) =>{
     console.log(e.target.value)
     axios
-        .delete(`http://localhost:8000/movie/` + e.target.value)
+        .delete(`http://moviescope-backend.onrender.com/movie/` + e.target.value)
         .then((res)=>{
             getData()
         })

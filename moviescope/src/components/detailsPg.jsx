@@ -15,7 +15,7 @@ const Showone = () => {
     const getMovie = () => {
         
         axios
-            .get(`http://localhost:8000/movie/${id}`, movie)
+            .get(`http://moviescope-backend.onrender.com/movie/${id}`, movie)
             .then((res) => {
             setmovie(res.data)
             console.log(res.data)
@@ -32,7 +32,7 @@ setUpdate({...update,
 const handleSubmit = (e) =>{
 e.preventDefault();
 axios
-.put(`http://localhost:8000/movie/${id}`, update)
+.put(`http://moviescope-backend.onrender.com/movie/${id}`, update)
 .then((res)=>{
     getMovie()
 })
@@ -43,7 +43,7 @@ axios
     const handleDelete = () =>{
         console.log(id)
         axios
-            .delete(`http://localhost:8000/movie/${id}`)
+            .delete(`http://moviescope-backend.onrender.com/movie/${id}`)
             .then((res)=>{
                 window.location.href = 'http://localhost:3000/mylist';
             })

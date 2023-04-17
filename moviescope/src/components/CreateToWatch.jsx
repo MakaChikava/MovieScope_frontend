@@ -16,7 +16,7 @@ const CreateList = () => {
     const handleSubmit = (e) =>{
         e.preventDefault()
         axios
-            .post('http://localhost:8000/movie', form)
+            .post('http://moviescope-backend.onrender.com/movie', form)
             .then((res)=>{
                 console.log(res)
                 window.location.href = 'http://localhost:3000/mylist';
