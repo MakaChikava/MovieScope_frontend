@@ -35,9 +35,9 @@ const handleDelete = (e) =>{
         <div className="my-20 flex flex-row flex-wrap justify-center">
             {movies.map((movie)=>{
                 return(
-                    <div className="flex flex-col m-5 justify-center" key={movie.id}>
+                    <div className="flex flex-col m-5 justify-center" key={movie._id}>
                         
-                        <Link to= {`/movie/${movie.id}`}><img src={movie.poster} className="hover:border hover:border-4 hover:rounded duration-200 border-white flex h-96 w-72 "/></Link>
+                        <Link to= {`/movie/${movie._id}`}><img src={movie.poster} className="hover:border hover:border-4 hover:rounded duration-200 border-white flex h-96 w-72 "/></Link>
                         <h2 className="flex justify-center text-white">{movie.title}</h2>
                         <button className="flex justify-center items-center bg-[#1543E4] text-white rounded-lg h-12 w-78 mx-2" onClick={handleDelete} value={movie.id}><img src='https://cdn-icons-png.flaticon.com/512/542/542724.png' className='h-8'/></button>
                     </div>

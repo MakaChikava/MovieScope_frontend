@@ -15,10 +15,6 @@ const CreateList = () => {
     }
     const handleSubmit = (e) =>{
         e.preventDefault()
-        handleCreate()
-    }
-    // =============== create movie list ============== //
-    const handleCreate = () =>{
         axios
             .post('http://localhost:8000/movie', form)
             .then((res)=>{
@@ -26,30 +22,34 @@ const CreateList = () => {
                 window.location.href = 'http://localhost:3000/mylist';
             })
     }
+    // =============== create movie list ============== //
+    // const handleCreate = () =>{
+        
+    // }
     
 
     return (
         <>
         <Navbar/>
-        <h1>Create List</h1>
-
+<br/>
         <form onSubmit={handleSubmit}>
         <label htmlFor="name" className="text-white">title: </label>
             <input type="text" name='title' onChange={handleChange} className="text-black"/>
-            <label htmlFor="name" className="text-white">Description: </label>
-            <input type="text" name='description' onChange={handleChange} className="text-black"/>
+            {/* <label htmlFor="name" className="text-white">Description: </label>
+            <input type="text" name='description' onChange={handleChange} className="text-black"/> */}
             <label htmlFor="name" className="text-white">poster: </label>
             <input type="text" name='poster' onChange={handleChange} className="text-black"/>
             <label htmlFor="name" className="text-white">genre: </label>
             <input type="text" name='genre' onChange={handleChange} className="text-black"/>
-            <label htmlFor="name" className="text-white">type: </label>
+            <label htmlFor="name" className="text-white">Description: </label>
             <input type="text" name='type' onChange={handleChange} className="text-black"/>
             <label htmlFor="name" className="text-white">duration: </label>
             <input type="text" name='duration' onChange={handleChange} className="text-black"/>
             <label htmlFor="name" className="text-white">release_date: </label>
             <input type="text" name='release_date' onChange={handleChange} className="text-black"/>
-            <input type="submit" className="text-white"/>
+            {/* <input type="submit" className="text-white"/> */}
         </form>
+        <button  onClick={handleSubmit}  className="text-white flex justify-center items-center bg-[#1543E4] text-white rounded-lg h-12 w-28 mx-2">submit</button>
         </>
     );
 }

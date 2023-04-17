@@ -6,13 +6,13 @@ import './App.css';
 const App = () => {
   let emptyMovie={title:'', overview:'', poster:''}
   let [movies, setMovies] = useState([]);
-
+  let [search, setSearch] = useState('');
   // =================== Get movies =======================
   
   const getMovies = () =>{
     const API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
     axios.
-      get(`https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=en-US&query=spiderman&page=1&include_adult=false`, emptyMovie)
+      get(`https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=en-US&query=${search}&page=1&include_adult=false`, emptyMovie)
       .then((res)=>{
         setMovies(res.data.results)
         console.log(res.data.results)
@@ -25,8 +25,9 @@ const App = () => {
     <div className="App">
       <Navbar/>
             <div className="my-9 flex items-center justify-center ">
-                <input type="text" placeholder="Search keywords" id='searchbar'/>
-                <button className='bg-[#1543E4] text-white rounded-lg h-12 w-28 mx-2'>Search</button>
+                <input type="text" placeholder="Search keywords" id='searchbar' value={search}
+					onChange={(e) => setSearch(e.target.value)}/>
+                <button className='bg-[#1543E4] text-white rounded-lg h-12 w-28 mx-2' onClick={getMovies}>Search</button>
             </div>
       <div className='flex w-auto flex-row flex-wrap justify-center'>
     {movies.map((movie)=>{
