@@ -1,7 +1,5 @@
 # MovieScope
 
-# News API
-
 ## User Stories
 
 * Users should be able to search for movies and have a list of movies displayed on the screen.
