@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from './components/navbar';
-
 import './App.css';
+
 const App = () => {
   let emptyMovie={title:'', overview:'', poster:''}
   let [movies, setMovies] = useState([]);
