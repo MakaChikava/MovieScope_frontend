@@ -17,3 +17,13 @@ body{
     border: 2px solid #ADD8E6;
     border-radius: 6px;
 }
+
+#create{
+    background-color: white;
+    background-position: 5px 11px;
+    background-repeat: no-repeat;
+    padding: 10px 30px;
+    width:35%;
+    border: 2px solid #ADD8E6;
+    border-radius: 6px;
+}

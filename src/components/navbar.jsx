@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 
 
-const Navbar = (props) => {
+const Navbar = () => {
 
     return (
         // navbar
@@ -28,8 +28,8 @@ const Navbar = (props) => {
                 <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/2048px-Hamburger_icon.svg.png' className="h-10 w-100% md:hidden"/>
         {/* links */}
                 <div className=" hidden md:flex space-x-6">
-                    <a href="/create" className="text-white hover:text-black">Create List</a>
-                    <a href="/mylist" className="text-white hover:text-black">My List</a>
+                    <a href="/create" className="text-white font-bold italic font-mono hover:text-black">Create List</a>
+                    <a href="/mylist" className="text-white font-bold italic font-mono hover:text-black">My List</a>
 
                 </div>
         {/* hamburger Icon */}

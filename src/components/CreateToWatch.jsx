@@ -32,24 +32,38 @@ const CreateList = () => {
         <>
         <Navbar/>
 <br/>
+
+<div className="flex flex-col  w-full">
         <form onSubmit={handleSubmit}>
-        <label htmlFor="name" className="text-white">title: </label>
-            <input type="text" name='title' onChange={handleChange} className="text-black"/>
-            {/* <label htmlFor="name" className="text-white">Description: </label>
-            <input type="text" name='description' onChange={handleChange} className="text-black"/> */}
-            <label htmlFor="name" className="text-white">poster: </label>
-            <input type="text" name='poster' onChange={handleChange} className="text-black"/>
-            <label htmlFor="name" className="text-white">genre: </label>
-            <input type="text" name='genre' onChange={handleChange} className="text-black"/>
-            <label htmlFor="name" className="text-white">Description: </label>
-            <input type="text" name='type' onChange={handleChange} className="text-black"/>
-            <label htmlFor="name" className="text-white">duration: </label>
-            <input type="text" name='duration' onChange={handleChange} className="text-black"/>
-            <label htmlFor="name" className="text-white">release_date: </label>
-            <input type="text" name='release_date' onChange={handleChange} className="text-black"/>
-            {/* <input type="submit" className="text-white"/> */}
+        <div className="flex justify-center my-5">
+            <input type="text" name='title' onChange={handleChange} placeholder="Title" className="text-black" id="create"/>
+        </div>
+
+        <div className="flex justify-center my-5">
+            <input type="text" name='poster' onChange={handleChange} placeholder="Image adress" className="text-black" id="create"/>
+        </div>
+            
+        <div className="flex justify-center my-5">
+            <input type="text" name='genre' onChange={handleChange} placeholder="genre" className="text-black" id="create"/>
+        </div>
+            
+        <div className="flex justify-center my-5">
+            <input type="text" name='type' onChange={handleChange} placeholder="Description" className="text-black" id="create"/>
+        </div>
+            
+        <div className="flex justify-center my-5">
+            <input type="text" name='duration' onChange={handleChange} placeholder="duration" className="text-black" id="create"/>
+        </div>
+            
+        <div className="flex justify-center my-5">
+            <input type="text" name='release_date' onChange={handleChange} placeholder="release_date" className="text-black" id="create"/>
+        </div>
         </form>
-        <button  onClick={handleSubmit}  className="text-white flex justify-center items-center bg-[#1543E4] text-white rounded-lg h-12 w-28 mx-2">submit</button>
+        <div className="flex justify-center my-5">
+            <button  onClick={handleSubmit}  className="text-white font-bold  font-mono flex justify-center items-center bg-[#1543E4] text-white rounded-lg h-12 w-1/4 mx-2">submit</button>
+        </div>
+        
+        </div>
         </>
     );
 }

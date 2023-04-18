@@ -26,9 +26,9 @@ const App = () => {
     <div className="App">
       <Navbar/>
             <div className="my-9 flex items-center justify-center ">
-                <input type="text" placeholder="Search keywords" id='searchbar' value={search}
+                <input type="text" placeholder="Search keywords"className='font-mono' id='searchbar' value={search}
 					onChange={(e) => setSearch(e.target.value)}/>
-                <button className='bg-[#1543E4] text-white rounded-lg h-12 w-28 mx-2' onClick={getMovies}>Search</button>
+                <button className='bg-[#1543E4] text-white font-bold  font-mono rounded-lg h-12 w-28 mx-2 hover:bg-[#2563eb]' onClick={getMovies}>Search</button>
             </div>
       <div className='flex w-auto flex-row flex-wrap justify-center'>
     {movies.map((movie)=>{
@@ -39,8 +39,8 @@ const App = () => {
           {/* content */}
             <div className='flex flex-col m-3'>
               <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`} className='flex h-96 w-72'/>
-              <h1 className='flex text-white'>{movie.title}</h1>
-              <h1 className='flex text-white'>{movie.name}</h1>
+              <h1 className='flex text-white font-bold font-mono'>{movie.title}</h1>
+              <h1 className='flex text-white font-bold font-mono'>{movie.name}</h1>
             </div>
 
         
