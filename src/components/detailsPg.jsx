@@ -77,13 +77,11 @@ useEffect(()=>{
             <form onSubmit={handleSubmit}>
             <label htmlFor="name" className="text-white">title: </label>
                 <input type="text" name='title' onChange={handleupdate} className=""/>
-                <label htmlFor="name" className="text-white">Description: </label>
-                <input type="text" name='description' onChange={handleupdate} className=""/>
                 <label htmlFor="name" className="text-white">poster: </label>
                 <input type="text" name='poster' onChange={handleupdate} className=""/>
                 <label htmlFor="name" className="text-white">genre: </label>
                 <input type="text" name='genre' onChange={handleupdate} className=""/>
-                <label htmlFor="name" className="text-white">type: </label>
+                <label htmlFor="name" className="text-white">Description: </label>
                 <input type="text" name='type' onChange={handleupdate} className=""/>
                 <label htmlFor="name" className="text-white">duration: </label>
                 <input type="text" name='duration' onChange={handleupdate} className=""/>

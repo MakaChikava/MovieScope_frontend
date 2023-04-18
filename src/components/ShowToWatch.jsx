@@ -39,7 +39,7 @@ const handleDelete = (e) =>{
                         
                         <Link to= {`/movie/${movie._id}`}><img src={movie.poster} className="hover:border hover:border-4 hover:rounded duration-200 border-white flex h-96 w-72 "/></Link>
                         <h2 className="flex justify-center text-white">{movie.title}</h2>
-                        <button className="flex justify-center items-center bg-[#1543E4] text-white rounded-lg h-12 w-78 mx-2" onClick={handleDelete} value={movie.id}><img src='https://cdn-icons-png.flaticon.com/512/542/542724.png' className='h-8'/></button>
+                        <button className="flex justify-center items-center bg-[#1543E4] text-white rounded-lg h-12 w-78 mx-2" onClick={handleDelete} value={movie._id}><img src='https://cdn-icons-png.flaticon.com/512/542/542724.png' className='h-8'/></button>
                     </div>
                     
                 );
