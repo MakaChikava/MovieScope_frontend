@@ -27,3 +27,13 @@ body{
     border: 2px solid #ADD8E6;
     border-radius: 6px;
 }
+
+#edit{
+    background-color: white;
+    background-position: 5px 11px;
+    background-repeat: no-repeat;
+    padding: 10px 30px;
+    width:100%;
+    border: 2px solid #ADD8E6;
+    border-radius: 6px;
+}

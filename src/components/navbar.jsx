@@ -25,15 +25,15 @@ const Navbar = () => {
         {/* link container */}
             <div className="mx-5 flex items-center justify-start">
         {/* hamburger */}
-                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/2048px-Hamburger_icon.svg.png' className="h-10 w-100% md:hidden"/>
+                {/* <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/2048px-Hamburger_icon.svg.png' className="h-10 w-100% md:hidden"/> */}
         {/* links */}
-                <div className=" hidden md:flex space-x-6">
+                <div className=" flex space-x-6">
                     <a href="/create" className="text-white font-bold italic font-mono hover:text-black">Create List</a>
                     <a href="/mylist" className="text-white font-bold italic font-mono hover:text-black">My List</a>
 
                 </div>
         {/* hamburger Icon */}
-        <button className="block hamburger md:hidden focus:outline-none"></button>
+        {/* <button className="block hamburger md:hidden focus:outline-none"></button> */}
         
             </div>
         

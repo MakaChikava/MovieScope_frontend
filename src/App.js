@@ -39,8 +39,8 @@ const App = () => {
           {/* content */}
             <div className='flex flex-col m-3'>
               <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`} className='flex h-96 w-72'/>
-              <h1 className='flex text-white font-bold font-mono'>{movie.title}</h1>
-              <h1 className='flex text-white font-bold font-mono'>{movie.name}</h1>
+              <h1 className='text-lg flex justify-center text-white font-bold font-mono'>{movie.title}</h1>
+              <h1 className='text-lg flex justify-center  text-white font-bold font-mono'>{movie.name}</h1>
             </div>
 
         
