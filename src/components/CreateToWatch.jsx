@@ -19,7 +19,7 @@ const CreateList = () => {
             .post('https://moviescope-backend.onrender.com/movie', form)
             .then((res)=>{
                 console.log(res)
-                window.location.href = 'http://localhost:3000/mylist';
+                window.location.href = 'https://moviescope-frontend.onrender.com/mylist';
             })
     }
     // =============== create movie list ============== //
