@@ -45,7 +45,7 @@ axios
         axios
             .delete(`https://moviescope-backend.onrender.com/movie/${id}`)
             .then((res)=>{
-                window.location.href = 'http://localhost:3000/mylist';
+                window.location.href = 'https://moviescope-frontend.onrender.com/mylist';
             })
     }
 // 
