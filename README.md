@@ -1,5 +1,8 @@
 # MovieScope
 
+MovieScope is an app where you can explore movies and TV shows! With this app, you can search for your favorite MovieScope is an app where you can explore entertainment content and create personalized watchlists to keep track of everything you want to watch.
+
+
 ## User Stories
 
 * Users should be able to search for movies and have a list of movies displayed on the screen
