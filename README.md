@@ -15,7 +15,7 @@ MovieScope is an app where you can explore movies and TV shows! With this app, y
 
 ## Live Link
 
-Live demo [here](https://moviescope-frontend.onrender.com/)
+Live demo [here](https://moviescope-frontend-3zkq8b3gv-makachikava.vercel.app/)
 
 
 ---
