@@ -19,7 +19,7 @@ const CreateList = () => {
             .post('https://moviescope-backend.onrender.com/movie', form)
             .then((res)=>{
                 console.log(res)
-                window.location.href = 'https://moviescope-frontend.onrender.com/mylist';
+                window.location.href = 'https://moviescope-frontend-3zkq8b3gv-makachikava.vercel.app/mylist'; //https://moviescope-frontend-3zkq8b3gv-makachikava.vercel.app/mylist
             })
     }
     // =============== create movie list ============== //
